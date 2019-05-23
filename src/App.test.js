@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import App from './App';
+import Joker from './components/Joker';
+import fetchJokes from './api/chucknorris.io';
+
+it('renders the Joker component, using chucknorris.io to populate the data', () => {
+
+  const expectedContent = (<Joker
+    getJoke={fetchJokes}
+  />)
+
+  const wrapper = shallow(<App />);
+  expect(wrapper.contains(expectedContent)).toBe(true);
 });

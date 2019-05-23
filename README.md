@@ -1,3 +1,15 @@
+## Links used to guide this example:
+
+create a react app:
+https://codeburst.io/building-your-first-react-app-c1f6eb814205
+
+make an api call and use the result:
+https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2
+
+testing:
+https://facebook.github.io/create-react-app/docs/running-tests
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
