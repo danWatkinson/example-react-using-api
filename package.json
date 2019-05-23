@@ -31,9 +31,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "nock": "^10.0.6",
-    "sinon": "^7.3.2"
   }
 }
