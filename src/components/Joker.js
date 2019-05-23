@@ -8,6 +8,22 @@ class Joker extends Component {
     this.loadAnother = this.loadAnother.bind(this);
   }
 
+  clearState() {
+    this.state = {
+       initialized: false,
+       error: false
+     }
+  }
+  
+  componentDidMount() {
+    this.callGetJoke();
+  }
+
+  loadAnother() {
+    this.clearState();
+    this.callGetJoke();
+  }
+
   async callGetJoke() {
     try {
       const jokeData = await this.props.getJoke();
@@ -17,26 +33,8 @@ class Joker extends Component {
         joke: jokeData.value
       });
     } catch (error) {
-      this.setState({
-        error: error
-      });
+      this.setState({error: error});
     }
-  }
-
-  async componentDidMount() {
-    this.callGetJoke();
-  }
-
-  clearState() {
-    this.state = {
-       initialized: false,
-       error: false
-     }
-  }
-
-  async loadAnother() {
-    this.clearState();
-    this.callGetJoke();
   }
 
   render() {
