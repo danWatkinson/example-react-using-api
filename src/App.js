@@ -8,9 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Joker
-          getJoke={fetchJokes}
-        />
+        <Joker getJoke={fetchJokes} />
       </header>
     </div>
   );

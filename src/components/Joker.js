@@ -20,7 +20,7 @@ class Joker extends Component {
       });
     } catch (error) {
       this.setState({
-        error: true
+        error: error
       });
     }
   }
@@ -30,7 +30,7 @@ class Joker extends Component {
   }
 
   renderError() {
-    return !this.state.initialized && this.state.error ? <p>Error</p> : null;
+    return !this.state.initialized && this.state.error ? <p>{this.state.error}</p> : null;
   }
 
   renderLoader() {
