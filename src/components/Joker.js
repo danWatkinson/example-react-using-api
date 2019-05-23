@@ -8,9 +8,11 @@ class Joker extends Component {
        initialized: false,
        error: false
      }
+
+     this.loadAnother = this.loadAnother.bind(this);
   }
 
-  async componentDidMount() {
+  async callGetJoke() {
     try {
       const jokeData = await this.props.getJoke();
 
@@ -23,6 +25,14 @@ class Joker extends Component {
         error: error
       });
     }
+  }
+
+  async componentDidMount() {
+    this.callGetJoke();
+  }
+
+  async loadAnother() {
+    this.callGetJoke();
   }
 
   render() {
@@ -38,7 +48,15 @@ class Joker extends Component {
   }
 
   renderApp() {
-    return <span>{this.state.joke}</span>
+    const thisComponent = this;
+    return (
+      <div>
+        <span>{this.state.joke}</span>
+        <button onClick={thisComponent.loadAnother}>
+          Load another..
+        </button>
+      </div>
+    )
   }
 
 }
