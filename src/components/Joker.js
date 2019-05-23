@@ -4,12 +4,8 @@ class Joker extends Component {
 
   constructor() {
     super();
-    this.state = {
-       initialized: false,
-       error: false
-     }
-
-     this.loadAnother = this.loadAnother.bind(this);
+    this.clearState();
+    this.loadAnother = this.loadAnother.bind(this);
   }
 
   async callGetJoke() {
@@ -31,7 +27,15 @@ class Joker extends Component {
     this.callGetJoke();
   }
 
+  clearState() {
+    this.state = {
+       initialized: false,
+       error: false
+     }
+  }
+
   async loadAnother() {
+    this.clearState();
     this.callGetJoke();
   }
 
