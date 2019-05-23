@@ -52,11 +52,10 @@ class Joker extends Component {
   }
 
   renderApp() {
-    const thisComponent = this;
     return (
       <div>
         <span>{this.state.joke}</span>
-        <button onClick={thisComponent.loadAnother}>
+        <button onClick={this.loadAnother}>
           Load another..
         </button>
       </div>
